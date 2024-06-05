@@ -4,11 +4,11 @@
     {
       "item": "home_operation_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_amount_color",
-      "value": "#33383E",
+      "value": "#FF0000",
       "enable": true
     },
     {
