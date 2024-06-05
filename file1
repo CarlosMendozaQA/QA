@@ -29,11 +29,11 @@
     {
       "item": "home_keyboard_number_color",
       "value": "#000000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_enable_color",
-      "value": "#33383E",
+      "value": "#FF0000",
       "enable": true
     },
     {
