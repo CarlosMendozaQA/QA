@@ -9,11 +9,11 @@
     {
       "item": "home_amount_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_center_buys_color",
-      "value": "#EC672C",
+      "value": "#FF0000",
       "enable": true
     },
     {
