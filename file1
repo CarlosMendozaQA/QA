@@ -19,11 +19,11 @@
     {
       "item": "home_coin_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_keyboard_container_color",
-      "value": "#33383E",
+      "value": "#FF0000",
       "enable": true
     },
     {
