@@ -167,7 +167,7 @@
     },
     {
       "item": "global_secondary_text_color",
-      "value": "#EC672C",
+      "value": "#FF0000",
       "enable": true
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "item": "global_selected_secondary_text_color",
-      "value": "#FF0000",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
