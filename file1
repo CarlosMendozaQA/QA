@@ -14,11 +14,11 @@
     {
       "item": "home_center_buys_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_coin_color",
-      "value": "#EC672C",
+      "value": "#FF0000",
       "enable": true
     },
     {
