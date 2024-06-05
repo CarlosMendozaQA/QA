@@ -24,11 +24,11 @@
     {
       "item": "home_keyboard_container_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_keyboard_number_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
