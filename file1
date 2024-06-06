@@ -64,7 +64,7 @@
     {
       "item": "home_sub_menu_tex_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "toolbar_background_color",
@@ -93,11 +93,11 @@
     {
       "item": "global_primary_button_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_primary_button_background_color",
-      "value": "#C54600",
+      "value": "#FF000",
       "enable": true
     },
     {
