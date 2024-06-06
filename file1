@@ -187,27 +187,27 @@
     },
     {
       "item": "global_printer_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
       "item": "global_printer_button_background_color",
-      "value": "#33383E",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_cancel_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
       "item": "global_cancel_button_background_color",
-      "value": "#EB001B",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_checkout_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
@@ -217,12 +217,12 @@
     },
     {
       "item": "global_reauthorization_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
       "item": "global_reauthorization_button_background_color",
-      "value": "#FF007E",
+      "value": "#000000",
       "enable": true
     },
     {
