@@ -38,12 +38,12 @@
     },
     {
       "item": "home_nav_icon_selected_color",
-      "value": "#33383E",
+      "value": "#FF0000",
       "enable": true
     },
     {
       "item": "home_nav_icon_disable_color",
-      "value": "#AAAAAA",
+      "value": "#FF0000",
       "enable": true
     },
     {
