@@ -78,7 +78,7 @@
     {
       "item": "merchant_title_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_primary_text_color",
@@ -260,7 +260,7 @@
     {
       "item": "image_toolbar_name",
       "value": "image_toolbar",
-      "url": "https://raw.githubusercontent.com/osantosg/imagen/c1d29acc56185d608f62376783d15f105a7f0a9e/image_toolbar.png",
+      "url": "https://github.com/CarlosMendozaQA/QA/blob/main/image_toolbar.png",
       "enable": true
     }
   ]
