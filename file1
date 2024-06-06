@@ -247,7 +247,7 @@
     },
     {
       "item": "global_tertiary_button_text_color",
-      "value": "#FF0000",
+      "value": "#000000",
       "enable": true
     },
     {
