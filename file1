@@ -122,7 +122,7 @@
     },
     {
       "item": "summary_item_title_payment_m_text_color",
-      "value": "#494949",
+      "value": "#FF0000",
       "enable": true
     },
     {
@@ -168,7 +168,7 @@
     {
       "item": "global_secondary_text_color",
       "value": "#FF0000",
-      "enable": false
+      "enable": true
     },
     {
       "item": "global_disable_secondary_text_color",
@@ -183,7 +183,7 @@
     {
       "item": "total_summary_icon_print_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_printer_button_icon_text_color",
