@@ -77,7 +77,7 @@
     },
     {
       "item": "merchant_title_text_color",
-      "value": "#33383E",
+      "value": "#FF0000",
       "enable": true
     },
     {
@@ -88,7 +88,7 @@
     {
       "item": "global_item_background_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_primary_button_text_color",
