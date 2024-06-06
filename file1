@@ -34,21 +34,21 @@
     {
       "item": "home_nav_icon_enable_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_selected_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_disable_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_background_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
