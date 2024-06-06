@@ -83,11 +83,11 @@
     {
       "item": "global_primary_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_item_background_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
