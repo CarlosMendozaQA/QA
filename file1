@@ -252,7 +252,7 @@
     },
     {
       "item": "global_tertiary_button_background_color",
-      "value": "#000000",
+      "value": "#FF000",
       "enable": true
     }
   ],
