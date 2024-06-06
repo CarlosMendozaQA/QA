@@ -92,12 +92,12 @@
     },
     {
       "item": "global_primary_button_text_color",
-      "value": "#FF0000",
+      "value": "#000000",
       "enable": false
     },
     {
       "item": "global_primary_button_background_color",
-      "value": "#FF000",
+      "value": "#FF0000",
       "enable": true
     },
     {
