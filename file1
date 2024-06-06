@@ -143,12 +143,12 @@
     {
       "item": "global_disabled_button_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_disabled_button_background_color",
       "value": "#000000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_tertiary_text_color",
@@ -212,7 +212,7 @@
     },
     {
       "item": "global_checkout_button_background_color",
-      "value": "#EC672C",
+      "value": "#000000",
       "enable": true
     },
     {
