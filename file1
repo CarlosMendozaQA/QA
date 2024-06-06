@@ -132,7 +132,7 @@
     },
     {
       "item": "summary_item_selected_tip_background_color",
-      "value": "#FF0000",
+      "value": "#false",
       "enable": true
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "item": "global_selected_secondary_text_color",
-      "value": "#FFFFFF",
+      "value": "#FF0000",
       "enable": true
     },
     {
