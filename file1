@@ -98,7 +98,7 @@
     {
       "item": "global_primary_button_background_color",
       "value": "#FF000",
-      "enable": false
+      "enable": true
     },
     {
       "item": "global_icon_primary_color",
