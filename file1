@@ -260,7 +260,7 @@
     {
       "item": "image_toolbar_name",
       "value": "image_toolbar",
-      "url": "https://raw.githubusercontent.com/CarlosMendozaQA/QA/a7387e0c9db30761b4392819a4cfb37fc8cc2027/image_toolbar.png",
+      "url": "https://github.com/CarlosMendozaQA/QA/blob/main/image_toolbar.png?raw=true",
       "enable": true
     }
   ]
