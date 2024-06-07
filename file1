@@ -3,7 +3,7 @@
   "custom_ui": [
     {
       "item": "home_operation_color",
-      "value": "#CCCCCC",
+      "value": "#000000",
       "enable": false
     },
     {
