@@ -237,12 +237,12 @@
     },
     {
       "item": "global_secondary_button_text_color",
-      "value": "#74D3A9",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_secondary_button_background_color",
-      "value": "#33383E",
+      "value": "#74D3A9",
       "enable": true
     },
     {
