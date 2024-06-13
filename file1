@@ -157,7 +157,7 @@
     },
     {
       "item": "global_selected_tertiary_text_color",
-      "value": "#FFFFFF",
+      "value": "#74D3A9",
       "enable": true
     },
     {
@@ -178,7 +178,7 @@
     {
       "item": "global_selected_secondary_text_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "total_summary_icon_print_color",
