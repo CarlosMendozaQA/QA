@@ -34,32 +34,32 @@
     {
       "item": "home_nav_icon_enable_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_selected_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_disable_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_background_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_text_color",
       "value": "#33383E",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_sub_menu_icon_color",
       "value": "#000000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_sub_menu_tex_color",
@@ -69,11 +69,11 @@
     {
       "item": "toolbar_background_color",
       "value": "#33383E",
-      "enable": true
+      "enable": false
     },{
       "item": "toolbar_ic_back_color",
       "value": "#FFFFFF",
-      "enable": true
+      "enable": false
     },
     {
       "item": "merchant_title_text_color",
@@ -92,8 +92,8 @@
     },
     {
       "item": "global_primary_button_text_color",
-      "value": "#000000",
-      "enable": false
+      "value": "#74D3A9",
+      "enable": true
     },
     {
       "item": "global_primary_button_background_color",
@@ -103,27 +103,27 @@
     {
       "item": "global_icon_primary_color",
       "value": "#FFFFFF",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_icon_primary_background_color",
       "value": "#33383E",
-      "enable": true
+      "enable": false
     },
     {
       "item": "signature_title_text_color",
       "value": "#FFFFFF",
-      "enable": true
+      "enable": false
     },
     {
       "item": "signature_container_background_color",
       "value": "#33383E",
-      "enable": true
+      "enable": false
     },
     {
       "item": "summary_item_title_payment_m_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "summary_item_tip_background_color",
@@ -133,12 +133,12 @@
     {
       "item": "summary_item_selected_tip_background_color",
       "value": "#false",
-      "enable": true
+      "enable": false
     },
     {
       "item": "summary_item_disable_tip_background_color",
       "value": "#FFFFFF",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_disabled_button_text_color",
@@ -168,7 +168,7 @@
     {
       "item": "global_secondary_text_color",
       "value": "#FF0000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_disable_secondary_text_color",
@@ -233,7 +233,7 @@
     {
       "item": "filter_secondary_text_color",
       "value": "#33383E",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_secondary_button_text_color",
