@@ -1,10 +1,10 @@
 {
-  "enable": false,
+  "enable": true,
   "custom_ui": [
     {
       "item": "home_operation_color",
-      "value": "#000000",
-      "enable": false
+      "value": "##74D3A9",
+      "enable": true
     },
     {
       "item": "home_amount_color",
