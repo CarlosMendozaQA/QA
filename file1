@@ -247,13 +247,13 @@
     },
     {
       "item": "global_tertiary_button_text_color",
-      "value": "#FFFFFF",
+      "value": "#74D3A9",
       "enable": true
     },
     {
       "item": "global_tertiary_button_background_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     }
   ],
   "custom_images": [
