@@ -259,7 +259,7 @@
   "custom_images": [
     {
       "item": "image_toolbar_name",
-      "value": "image_toolbar",
+      "value": "image_toolbar1",
       "url": "https://github.com/CarlosMendozaQA/QA/blob/main/image_toolbar1.png?raw=true",
       "enable": true
     }
