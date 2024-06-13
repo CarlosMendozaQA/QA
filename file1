@@ -78,7 +78,7 @@
     {
       "item": "merchant_title_text_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_primary_text_color",
