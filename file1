@@ -127,7 +127,7 @@
     },
     {
       "item": "summary_item_tip_background_color",
-      "value": "#FFFFFF",
+      "value": "#74D3A9",
       "enable": true
     },
     {
@@ -168,7 +168,7 @@
     {
       "item": "global_secondary_text_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_disable_secondary_text_color",
