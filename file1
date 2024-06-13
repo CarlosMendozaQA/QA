@@ -59,12 +59,12 @@
     {
       "item": "home_sub_menu_icon_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_sub_menu_tex_color",
       "value": "#000000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "toolbar_background_color",
@@ -237,7 +237,7 @@
     },
     {
       "item": "global_secondary_button_text_color",
-      "value": "#FFFFFF",
+      "value": "#74D3A9",
       "enable": true
     },
     {
