@@ -29,22 +29,22 @@
     {
       "item": "home_keyboard_number_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "home_nav_icon_enable_color",
-      "value": "#FF0000",
-      "enable": false
+      "value": "#74D3A9",
+      "enable": true
     },
     {
       "item": "home_nav_icon_selected_color",
-      "value": "#FF0000",
-      "enable": false
+      "value": "#74D3A9",
+      "enable": true
     },
     {
       "item": "home_nav_icon_disable_color",
-      "value": "#FF0000",
-      "enable": false
+      "value": "#74D3A9",
+      "enable": true
     },
     {
       "item": "home_nav_background_color",
