@@ -153,7 +153,7 @@
     {
       "item": "global_tertiary_text_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_selected_tertiary_text_color",
@@ -167,7 +167,7 @@
     },
     {
       "item": "global_secondary_text_color",
-      "value": "#EC672C",
+      "value": "#74D3A9",
       "enable": true
     },
     {
