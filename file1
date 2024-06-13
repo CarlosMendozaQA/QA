@@ -58,12 +58,12 @@
     },
     {
       "item": "home_sub_menu_icon_color",
-      "value": "#EC672C",
+      "value": "#74D3A9",
       "enable": true
     },
     {
       "item": "home_sub_menu_tex_color",
-      "value": "#EC672C",
+      "value": "#000000",
       "enable": true
     },
     {
@@ -143,12 +143,12 @@
     {
       "item": "global_disabled_button_text_color",
       "value": "#74D3A9",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_disabled_button_background_color",
       "value": "#000000",
-      "enable": true
+      "enable": false
     },
     {
       "item": "global_tertiary_text_color",
