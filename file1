@@ -3,7 +3,7 @@
   "custom_ui": [
     {
       "item": "home_operation_color",
-      "value": "#3139EF",
+      "value": "#EC672C",
       "enable": true
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "item": "global_item_background_color",
-      "value": "#3139EF",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
@@ -122,12 +122,12 @@
     },
     {
       "item": "summary_item_title_payment_m_text_color",
-      "value": "#3139EF",
+      "value": "#494949",
       "enable": true
     },
     {
       "item": "summary_item_tip_background_color",
-      "value": "#3139EF",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
@@ -152,7 +152,7 @@
     },
     {
       "item": "global_tertiary_text_color",
-      "value": "#3139EF",
+      "value": "#33383E",
       "enable": true
     },
     {
