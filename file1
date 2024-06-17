@@ -58,13 +58,13 @@
     },
     {
       "item": "home_sub_menu_icon_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#EC672C",
+      "enable": true
     },
     {
       "item": "home_sub_menu_tex_color",
-      "value": "#000000",
-      "enable": false
+      "value": "#EC672C",
+      "enable": true
     },
     {
       "item": "toolbar_background_color",
@@ -122,18 +122,18 @@
     },
     {
       "item": "summary_item_title_payment_m_text_color",
-      "value": "#74D3A9",
+      "value": "#494949",
       "enable": true
     },
     {
       "item": "summary_item_tip_background_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#FFFFFF",
+      "enable": true
     },
     {
       "item": "summary_item_selected_tip_background_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#494949",
+      "enable": true
     },
     {
       "item": "summary_item_disable_tip_background_color",
@@ -142,72 +142,72 @@
     },
     {
       "item": "global_disabled_button_text_color",
-      "value": "#000000",
-      "enable": false
+      "value": "#AAAAAA",
+      "enable": true
     },
     {
       "item": "global_disabled_button_background_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#0B70B9",
+      "enable": true
     },
     {
       "item": "global_tertiary_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#33383E",
+      "enable": true
     },
     {
       "item": "global_selected_tertiary_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#FFFFFF",
+      "enable": true
     },
     {
       "item": "global_disable_tertiary_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#C0C0C0",
+      "enable": true
     },
     {
       "item": "global_secondary_text_color",
-      "value": "#74D3A9",
+      "value": "#EC672C",
       "enable": true
     },
     {
       "item": "global_disable_secondary_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#C0C0C0",
+      "enable": true
     },
     {
       "item": "global_selected_secondary_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#FFFFFF",
+      "enable": true
     },
     {
       "item": "total_summary_icon_print_color",
-      "value": "#74D3A9",
+      "value": "#EC672C",
       "enable": true
     },
     {
       "item": "global_printer_button_icon_text_color",
-      "value": "#000000",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
       "item": "global_printer_button_background_color",
-      "value": "#74D3A9",
+      "value": "#33383E",
       "enable": true
     },
     {
       "item": "global_cancel_button_icon_text_color",
-      "value": "#000000",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
       "item": "global_cancel_button_background_color",
-      "value": "#74D3A9",
+      "value": "#EB001B",
       "enable": true
     },
     {
       "item": "global_checkout_button_icon_text_color",
-      "value": "#000000",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
@@ -217,12 +217,12 @@
     },
     {
       "item": "global_reauthorization_button_icon_text_color",
-      "value": "#000000",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
       "item": "global_reauthorization_button_background_color",
-      "value": "#74D3A9",
+      "value": "#FF007E",
       "enable": true
     },
     {
@@ -237,23 +237,23 @@
     },
     {
       "item": "global_secondary_button_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#FFFFFF",
+      "enable": true
     },
     {
       "item": "global_secondary_button_background_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#33383E",
+      "enable": true
     },
     {
       "item": "global_tertiary_button_text_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#FFFFFF",
+      "enable": true
     },
     {
       "item": "global_tertiary_button_background_color",
-      "value": "#74D3A9",
-      "enable": false
+      "value": "#33383E",
+      "enable": true
     }
   ],
   "custom_images": [
