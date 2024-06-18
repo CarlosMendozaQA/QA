@@ -1,9 +1,9 @@
 {
-  "enable": false,
+  "enable": true,
   "custom_ui": [
     {
       "item": "home_operation_color",
-      "value": "#3139EF",
+      "value": "#EC672C",
       "enable": true
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "item": "home_coin_color",
-      "value": "#3139EF",
+      "value": "#EC672C",
       "enable": true
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "item": "global_primary_text_color",
-      "value": "#3139EF",
+      "value": "#33383E",
       "enable": true
     },
     {
@@ -127,7 +127,7 @@
     },
     {
       "item": "summary_item_tip_background_color",
-      "value": "#3139EF",
+      "value": "#FFFFFF",
       "enable": true
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "item": "global_secondary_text_color",
-      "value": "#3139EF",
+      "value": "#EC672C",
       "enable": true
     },
     {
@@ -252,7 +252,7 @@
     },
     {
       "item": "global_tertiary_button_background_color",
-      "value": "#3139EF",
+      "value": "#33383E",
       "enable": true
     }
   ],
@@ -260,7 +260,7 @@
     {
       "item": "image_toolbar_name",
       "value": "image_toolbar",
-      "url": "https://github.com/CarlosMendozaQA/QA/blob/main/image_toolbar.png?raw=true",
+      "url": "https://raw.githubusercontent.com/osantosg/imagen/c1d29acc56185d608f62376783d15f105a7f0a9e/image_toolbar.png",
       "enable": true
     }
   ]
