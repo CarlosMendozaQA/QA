@@ -28,37 +28,37 @@
     },
     {
       "item": "home_keyboard_number_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "home_nav_icon_enable_color",
-      "value": "#33383E",
+      "value": "#6B4AFF",
       "enable": true
     },
     {
       "item": "home_nav_icon_selected_color",
-      "value": "#33383E",
+      "value": "#6B4AFF",
       "enable": true
     },
     {
       "item": "home_nav_icon_disable_color",
-      "value": "#AAAAAA",
+      "value": "#6B4AFF",
       "enable": true
     },
     {
       "item": "home_nav_background_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "home_nav_icon_text_color",
-      "value": "#33383E",
+      "value": "#6B4AFF",
       "enable": true
     },
     {
       "item": "home_sub_menu_icon_color",
-      "value": "#EC672C",
+      "value": "#6B4AFF",
       "enable": true
     },
     {
