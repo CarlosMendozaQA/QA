@@ -8,17 +8,17 @@
     },
     {
       "item": "home_amount_color",
-      "value": "#12BBD6",
+      "value": "#33383E",
       "enable": true
     },
     {
       "item": "home_center_buys_color",
-      "value": "#12BBD6",
+      "value": "#EC672C",
       "enable": true
     },
     {
       "item": "home_coin_color",
-      "value": "#12BBD6",
+      "value": "#EC672C",
       "enable": true
     },
     {
