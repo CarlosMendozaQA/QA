@@ -187,72 +187,72 @@
     },
     {
       "item": "global_printer_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_printer_button_background_color",
-      "value": "#33383E",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_cancel_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_cancel_button_background_color",
-      "value": "#EB001B",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_checkout_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_checkout_button_background_color",
-      "value": "#EC672C",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_reauthorization_button_icon_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_reauthorization_button_background_color",
-      "value": "#FF007E",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_input_primary_text_color",
-      "value": "#33383E",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "filter_secondary_text_color",
-      "value": "#33383E",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_secondary_button_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_secondary_button_background_color",
-      "value": "#33383E",
+      "value": "#4AFF5D",
       "enable": true
     },
     {
       "item": "global_tertiary_button_text_color",
-      "value": "#FFFFFF",
+      "value": "#000000",
       "enable": true
     },
     {
       "item": "global_tertiary_button_background_color",
-      "value": "#33383E",
+      "value": "#4AFF5D",
       "enable": true
     }
   ],
@@ -260,7 +260,7 @@
     {
       "item": "image_toolbar_name",
       "value": "image_toolbar",
-      "url": "https://raw.githubusercontent.com/osantosg/imagen/c1d29acc56185d608f62376783d15f105a7f0a9e/image_toolbar.png",
+      "url": "https://github.com/CarlosMendozaQA/QA/blob/main/image_toolbar.png?raw=true ",
       "enable": true
     }
   ]
