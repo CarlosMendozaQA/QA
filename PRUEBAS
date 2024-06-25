@@ -1,8 +1,6 @@
-  {
+{
 "enable":true,
-"custom_ui":
-   [
-   
+"custom_ui":[
       {
       "item":"home_operation_color",
       "value":"00294B",
@@ -309,8 +307,7 @@
       "enable":true
       }
    ],
-"custom_images":
-   [
+"custom_images":[
       {
       "item":"image_toolbar_name",
       "value":"image_toolbar",
