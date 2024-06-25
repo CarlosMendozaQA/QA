@@ -1,51 +1,62 @@
 {
-  "enable": true,
-  "custom_ui": [
-    {
-      "item": "home_operation_color",
-      "value": "#00294B",
-      "enable": true
-    },
-    {
-      "item": "home_amount_color",
-      "value": "#33383E",
-      "enable": true
-    },
-    {
-      "item": "home_center_buys_color",
-      "value": "#00AAA8",
-      "enable": true
-    },
-    {
-      "item": "home_coin_color",
-      "value": "#00294B",
-      "enable": true
-    },
-    {
-      "item": "home_keyboard_container_color",
-      "value": "#00294B",
-      "enable": true
-    },
-    {
-      "item": "home_keyboard_number_color",
-      "value": "#FFFFFF",
-      "enable": true
-    },
-    {
-      "item": "home_nav_icon_enable_color",
-      "value": "#2B5287",
-      "enable": true
-    },
-    {
-      "item": "home_nav_icon_selected_color",
-      "value": "#00294B",
-      "enable": true
-    },
-    {
-      "item": "home_nav_icon_disable_color",
-      "value": "#AAAAAA",
-      "enable": true
-    },   
+"enable":true,
+"custom_ui":
+   [
+   
+      {
+      "item":"home_operation_color",
+      "value":"#00294B",
+      "enable":true
+      },
+   
+      {
+      "item":"home_amount_color",
+      "value":"#33383E",
+      "enable":true
+      },
+   
+      {
+      "item":"home_center_buys_color",
+      "value":"#00AAA8",
+      "enable":true
+      },
+   
+      {
+      "item":"home_coin_color",
+      "value":"#00294B",
+      "enable":true
+      },
+   
+      {
+      "item":"home_keyboard_container_color",
+      "value":"#00294B",
+      "enable":true
+      },
+   
+      {
+      "item":"home_keyboard_number_color",
+      "value":"#FFFFFF",
+      "enable":true
+      },
+   
+      {
+      "item":"home_nav_icon_enable_color",
+      "value":"#2B5287",
+      "enable":true
+      },
+   
+      {
+      "item":"home_nav_icon_selected_color",
+      "value":"#00294B",
+      "enable":true
+      },
+   
+      {
+      "item":"home_nav_icon_disable_color",
+      "value":"#AAAAAA",
+      "enable":true
+      },
+   
       {
       "item":"home_nav_background_color",
       "value":"#FFFFFF",
@@ -298,11 +309,13 @@
       "enable":true
       }
    ],
-"custom_images":[
+"custom_images":
+   [
+   
       {
       "item":"image_toolbar_name",
       "value":"image_toolbar",
-      "url":"https://github.com/CarlosMendozaQA/QA/blob/main/large.png?raw=true",
+      "url":"https://raw.githubusercontent.com/osantosg/imagen/c1d29acc56185d608f62376783d15f105a7f0a9e/image_toolbar.png",
       "enable":true
       }
    ]
