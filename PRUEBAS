@@ -1,60 +1,51 @@
 {
-"enable":true,
-"custom_ui":[
-      {
-      "item":"home_operation_color",
-      "value":"00294B",
-      "enable":true
-      },
-   
-      {
-      "item":"home_amount_color",
-      "value":"#33383E",
-      "enable":true
-      },
-   
-      {
-      "item":"home_center_buys_color",
-      "value":"00AAA8",
-      "enable":true
-      },
-   
-      {
-      "item":"home_coin_color",
-      "value":"#00294B",
-      "enable":true
-      },
-   
-      {
-      "item":"home_keyboard_container_color",
-      "value":"#00294B",
-      "enable":true
-      },
-   
-      {
-      "item":"home_keyboard_number_color",
-      "value":"#FFFFFF",
-      "enable":true
-      },
-   
-      {
-      "item":"home_nav_icon_enable_color",
-      "value":"#2B5287",
-      "enable":true
-      },
-   
-      {
-      "item":"home_nav_icon_selected_color",
-      "value":"#00294B",
-      "enable":true
-      },
-   
-      {
-      "item":"home_nav_icon_disable_color",
-      "value":"#AAAAAA",
-      "enable":true
-      },
-   
+  "enable": true,
+  "custom_ui": [
+    {
+      "item": "home_operation_color",
+      "value": "#00294B",
+      "enable": true
+    },
+    {
+      "item": "home_amount_color",
+      "value": "#33383E",
+      "enable": true
+    },
+    {
+      "item": "home_center_buys_color",
+      "value": "#00AAA8",
+      "enable": true
+    },
+    {
+      "item": "home_coin_color",
+      "value": "#00294B",
+      "enable": true
+    },
+    {
+      "item": "home_keyboard_container_color",
+      "value": "#00294B",
+      "enable": true
+    },
+    {
+      "item": "home_keyboard_number_color",
+      "value": "#FFFFFF",
+      "enable": true
+    },
+    {
+      "item": "home_nav_icon_enable_color",
+      "value": "#2B5287",
+      "enable": true
+    },
+    {
+      "item": "home_nav_icon_selected_color",
+      "value": "#00294B",
+      "enable": true
+    },
+    {
+      "item": "home_nav_icon_disable_color",
+      "value": "#AAAAAA",
+      "enable": true
+    },   
       {
       "item":"home_nav_background_color",
       "value":"#FFFFFF",
