@@ -258,7 +258,7 @@
     },
     {
       "item": "Keyboard_number",
-      "value": "#4E0CA5",
+      "value": "#c1c0bd",
       "enable": true
     },
     {
@@ -273,17 +273,17 @@
     },
     {
       "item": "Cancel_background",
-      "value": "#c1c0bd1",
+      "value": "#4E0CA5",
       "enable": true
     },
     {
       "item": "Erase_background",
-      "value": "#c1c0bd",
+      "value": "#4E0CA5",
       "enable": true
     },
     {
       "item": "Accept_background",
-      "value": "#c1c0bd,
+      "value": "#4E0CA5,
       "enable": true
     },
     {
