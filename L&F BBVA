@@ -37,13 +37,18 @@
       "enable" : true
     },
     {
-      "item" : "home_nav_icon_selected_color",
-      "value" : "#113C73",
+      "item" : "global_card_selected_background_color",
+      "value" : "#0279C",
       "enable" : true
     },
     {
       "item" : "home_nav_icon_disable_color",
       "value" : "#C0C0C0",
+      "enable" : true
+    },
+    {
+      "item" : "home_nav_background_color",
+      "value" : "#FFFFFF",
       "enable" : true
     },
     {
@@ -82,7 +87,7 @@
     },
     {
       "item" : "global_primary_text_color",
-      "value" : "#4B4C4D",
+      "value" : "#30455a",
       "enable" : true
     },
     {
@@ -97,7 +102,7 @@
     },
     {
       "item" : "global_primary_button_background_color",
-      "value" : "#0279C3",
+      "value" : "#00A6E4",
       "enable" : true
     },
     {
@@ -133,15 +138,20 @@
         "Array" : [
           [
             "",
-            false,
-            null
+            true,
+            null,
+            [
+              [
+                {}
+              ]
+            ]
           ]
         ]
       }
     },
     {
       "item" : "summary_item_selected_tip_background_color",
-      "value" : "#1a447c",
+      "value" : "#0279C3",
       "enable" : true
     },
     {
@@ -161,7 +171,7 @@
     },
     {
       "item" : "global_tertiary_text_color",
-      "value" : "#0279C3",
+      "value" : "#30455a",
       "enable" : true
     },
     {
@@ -176,7 +186,7 @@
     },
     {
       "item" : "global_secondary_text_color",
-      "value" : "#0279C3",
+      "value" : "#0279c3",
       "enable" : true
     },
     {
@@ -236,7 +246,7 @@
     },
     {
       "item" : "global_input_primary_text_color",
-      "value" : "#1a447c",
+      "value" : "#1B213B",
       "enable" : true
     },
     {
