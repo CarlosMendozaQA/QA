@@ -52,21 +52,12 @@
       "enable" : true
     },
     {
-      "item" : "home_nav_background_color",
-      "value" : "#FFFFFF",
-      "enable" : true
-    },
-    {
       "item" : "home_nav_icon_text_color",
       "value" : "#633F99",
       "enable" : true
     },
     {
-      "value" : "#1a447c",
-      "enable" : true
-    },
-    {
-      "item" : "home_sub_menu_tex_color",
+      "item" : "home_sub_menu_text_color",
       "value" : "#D62E0F",
       "enable" : true
     },
@@ -222,7 +213,7 @@
     },
     {
       "item" : "global_checkout_button_background_color",
-      "value" : "00AAA8",
+      "value" : "#00AAA8",
       "enable" : true
     },
     {
