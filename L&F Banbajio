@@ -336,7 +336,7 @@
     {
       "item": "sound_s1p2",
       "value": "",
-      "url_approve": "https://github.com/CarlosMendozaQA/QA/blob/8a4a009b4a3e38e7e7ace1e5e03670437566119a/banbajio_sound.wav",
+      "url_approve": "https://raw.githubusercontent.com/CarlosMendozaQA/QA/8a4a009b4a3e38e7e7ace1e5e03670437566119a/banbajio_sound.wav",
       "enable": true
     },
     {
