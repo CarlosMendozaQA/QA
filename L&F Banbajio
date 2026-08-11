@@ -329,7 +329,7 @@
       "url_remove": "https://tpv-parameters.sp.smartpayment.com.mx/lt/remove_card_BanBajio_S1P2_BB.json",
       "url_loader": "https://tpv-parameters.sp.smartpayment.com.mx/icons/BanBajioloaderv2.json",
       "url_idle": "https://raw.githubusercontent.com/CarlosMendozaQA/QA/refs/heads/main/Logo%20comercio%20BB.json",
-      "url_approve": "",
+      "url_approve": "https://raw.githubusercontent.com/CarlosMendozaQA/QA/refs/heads/main/approve_card_transaction_banbajio.json",
       "enable": true
     }
    ],
