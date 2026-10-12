@@ -1,0 +1,27 @@
+meta {
+  name: Pruebas IoT
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  dynamicSequenceNumber: 123456567
+  siteId: 
+  serialNumber: 148254267001
+  transactionAmount: 1000.00
+  costumerApiKey: 
+  originalSequenceNumber: 
+  transactionDate: 
+  approvalCode: 
+  maskedPan: 
+  originalRNN: 
+}
+
+script:post-response {
+  bru.setVar(
+    "dynamicSequenceNumber",
+    new Date().toISOString().replace(/[-:TZ.]/g, "").slice(0, 14)
+  );
+}

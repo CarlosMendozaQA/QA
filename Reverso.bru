@@ -1,0 +1,66 @@
+meta {
+  name: Reverso
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/opi
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-api-key: q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl
+}
+
+body:json {
+  <TransactionRequest>
+    <SequenceNo>959186495342</SequenceNo>
+    <TransType>04</TransType>
+    <TransAmount>100</TransAmount>
+    <TransCurrency>484</TransCurrency>
+    <TransDateTime>2026-07-17T11:36:59-06:00</TransDateTime>
+    <OriginalType>01</OriginalType>
+    <OriginalTime>2026-07-17T11:35:42-06:00</OriginalTime>
+    <SiteId>CAIIAA2OPJTE</SiteId>
+    <WSNo>148254267001</WSNo>
+    <IndustryCode>2</IndustryCode>
+    <ProxyInfo>SPIV25.1</ProxyInfo>
+    <POSInfo>Simphony 19.9.2.0.80</POSInfo>
+  </TransactionRequest>
+}
+
+script:pre-request {
+  bru.setVar(
+      "dynamicSequenceNumber",
+      new Date().toISOString().replace(/[-:TZ.]/g, "").slice(0, 14)
+  );
+}
+
+script:post-response {
+  const jsonData = res.getBody();
+  
+  test("Reverso aprobado", function () {
+      expect(jsonData.dataCommand.responseMessage).to.eql("APROBADA");
+  });
+  
+  if (jsonData?.dataCommand?.responseMessage !== "APROBADA") {
+      console.error("❌ Reverso falló", {
+          response: jsonData
+      });
+  } else {
+      console.log("🔄 Reverso exitoso", {
+          approvalCode: jsonData.dataCommand.approvalCode,
+          rrn: jsonData.dataCommand.rrn
+      });
+  }
+  
+  bru.setNextRequest(null);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

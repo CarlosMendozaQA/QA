@@ -1,0 +1,64 @@
+meta {
+  name: Consulta
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-api-key: q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl
+}
+
+body:json {
+  {
+    "code": "0002",
+    "sequenceNo": "{{dynamicSequenceNumber}}",
+    "siteId": "{{siteId}}",
+    "wsNo": "{{serialNumber}}",
+    "posInfo": "SMARTPOS|V1.04",
+    "dataTransaction": {
+      "originalTxCode": "1001",
+      "originalSeqNo": "{{originalSequenceNumber}}",
+      "txnDate": "{{transactionDate}}",
+      "transAmount": "{{transactionAmount}}",
+      "tipOnPinpad": false,
+      "promoOnPinpad": true,
+      "transCurrency": "484",
+      "cardPresent": false
+    }
+  }
+}
+
+script:pre-request {
+  pm.collectionVariables.set("dynamicSequenceNumber", Date.now());
+}
+
+script:post-response {
+  const jsonData = res.getBody();
+  
+  test("Consulta exitosa", function () {
+      expect(jsonData).to.have.property("dataCommand");
+  });
+  
+  if (!jsonData?.dataCommand) {
+      console.error("❌ Consulta sin dataCommand", jsonData);
+  } else {
+      console.log("🔍 Consulta OK", {
+          rrn: jsonData.dataCommand.rrn,
+          status: jsonData.dataCommand.responseMessage
+      });
+  }
+  
+  bru.setNextRequest(null);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

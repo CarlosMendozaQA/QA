@@ -1,0 +1,112 @@
+meta {
+  name: Venta
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/opi
+  body: xml
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/xml
+  x-api-key: Ai7CQBv4LB2lmo6MyEQ8C5qubsyvMUHW5stlFBZv
+  Accept: application/xml
+}
+
+body:json {
+  <TransactionRequest>
+    <SequenceNo>959186495342</SequenceNo>
+    <TransType>01</TransType>
+    <TransAmount>100</TransAmount>
+    <OtherAmount>0</OtherAmount>
+    <TipAmount>0</TipAmount>
+    <TransCurrency>484</TransCurrency>
+    <TaxAmount>0</TaxAmount>
+    <TransDateTime>2026-09-07T11: 35: 42-06: 00</TransDateTime>
+    <CardPresent>1</CardPresent>
+    <PartialAuthFlag>1</PartialAuthFlag>
+    <SiteId>RCLOCTRU4F3W</SiteId>
+    <WSNo>148254267001</WSNo>
+    <Operator>2062</Operator>
+    <GuestNo>29</GuestNo>
+    <ChargeInfo>0</ChargeInfo>
+    <IndustryCode>2</IndustryCode>
+    <ProxyInfo>SPIV25.1</ProxyInfo>
+    <POSInfo>Simphony 19.9.2.0.80</POSInfo>
+    <CheckEmployeeCheckName>SmartPayments</CheckEmployeeCheckName>
+    <OrderType>Dine In</OrderType>
+    <SupportsCardAcquisition>0</SupportsCardAcquisition>
+    <SupportDonation>Y</SupportDonation>
+    <SupportCCSurcharge>Y</SupportCCSurcharge>
+    <SalesTtl>100</SalesTtl>
+  </TransactionRequest>
+}
+
+body:xml {
+  <TransactionRequest>
+    <SequenceNo>959186495342</SequenceNo>
+    <TransType>01</TransType>
+    <TransAmount>100</TransAmount>
+    <OtherAmount>0</OtherAmount>
+    <TipAmount>0</TipAmount>
+    <TransCurrency>484</TransCurrency>
+    <TaxAmount>0</TaxAmount>
+    <TransDateTime>2026-09-07T11: 35: 42-06: 00</TransDateTime>
+    <CardPresent>1</CardPresent>
+    <PartialAuthFlag>1</PartialAuthFlag>
+    <SiteId>RCLOCTRU4F3W</SiteId>
+    <WSNo>148254267001</WSNo>
+    <Operator>2062</Operator>
+    <GuestNo>29</GuestNo>
+    <ChargeInfo>0</ChargeInfo>
+    <IndustryCode>2</IndustryCode>
+    <ProxyInfo>SPIV25.1</ProxyInfo>
+    <POSInfo>Simphony 19.9.2.0.80</POSInfo>
+    <CheckEmployeeCheckName>SmartPayments</CheckEmployeeCheckName>
+    <OrderType>Dine In</OrderType>
+    <SupportsCardAcquisition>0</SupportsCardAcquisition>
+    <SupportDonation>Y</SupportDonation>
+    <SupportCCSurcharge>Y</SupportCCSurcharge>
+    <SalesTtl>100</SalesTtl>
+  </TransactionRequest>
+}
+
+script:post-response {
+  const jsonData = res.getBody();
+  
+  if (jsonData?.dataCommand?.responseMessage === "APROBADA") {
+  
+      // Guardar variables (ya lo tienes)
+      pm.collectionVariables.set("originalSequenceNumber", bru.getCollectionVar("dynamicSequenceNumber"));
+      pm.collectionVariables.set("transactionDate", jsonData.dataCommand.txnDate);
+      pm.collectionVariables.set("approvalCode", jsonData.dataCommand.approvalCode);
+      pm.collectionVariables.set("transactionAmount", (Number(jsonData.dataCommand.txnAmount) / 100).toFixed(2));
+      pm.collectionVariables.set("maskedPan", jsonData.dataCommand.accountNumber);
+      pm.collectionVariables.set("originalRNN", jsonData.dataCommand.rrn);
+  
+      // DECISIÓN DEL FLUJO 🎯
+      let flujo = bru.getEnvVar("flujo"); 
+      // valores posibles: reverso, cancelacion, devolucion, consulta
+  
+      if (flujo === "reverso") {
+          bru.setNextRequest("Reverso");
+      } else if (flujo === "cancelacion") {
+          bru.setNextRequest("Cancelación");
+      } else if (flujo === "devolucion") {
+          bru.setNextRequest("Devolución");
+      } else {
+          bru.setNextRequest("Consulta");
+      }
+  
+  } else {
+      bru.setNextRequest(null);
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,69 @@
+meta {
+  name: Devolución
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-api-key: q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl
+}
+
+body:json {
+  {
+    "code": "1005",
+    "sequenceNo": "{{dynamicSequenceNumber}}",
+    "siteId": "{{siteId}}",
+    "wsNo": "{{serialNumber}}",
+    "posInfo": "PostmanRequest",
+    "dataTransaction": {
+      "originalSeqNo": "{{originalSequenceNumber}}",
+      "txnDate": "{{transactionDate}}",
+      "approvalCode": "{{approvalCode}}",
+      "transAmount": "{{transactionAmount}}",
+      "tipAmount": "0.00",
+      "tipOnPinpad": false,
+      "promoOnPinpad": true,
+      "transCurrency": "484",
+      "cardPresent": false,
+      "maskedPan": "{{maskedPan}}",
+      "originalRnn": "{{originalRNN}}"
+    }
+  }
+}
+
+script:pre-request {
+  pm.collectionVariables.set("dynamicSequenceNumber", Date.now());
+}
+
+script:post-response {
+  const jsonData = res.getBody();
+  
+  test("Devolución aprobada", function () {
+      expect(jsonData.dataCommand.responseMessage).to.eql("APROBADA");
+  });
+  
+  if (jsonData?.dataCommand?.responseMessage !== "APROBADA") {
+      console.error("❌ Devolución falló", {
+          response: jsonData
+      });
+  } else {
+      console.log("💸 Devolución exitosa", {
+          approvalCode: jsonData.dataCommand.approvalCode,
+          rrn: jsonData.dataCommand.rrn
+      });
+  }
+  
+  bru.setNextRequest(null);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

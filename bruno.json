@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Pruebas IoT",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

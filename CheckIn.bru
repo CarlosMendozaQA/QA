@@ -1,0 +1,90 @@
+meta {
+  name: CheckIn
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-api-key: Ai7CQBv4LB2lmo6MyEQ8C5qubsyvMUHW5stlFBZv
+  Accept: application/json
+}
+
+body:json {
+  {
+    "code": "1007",
+    "sequenceNo": "{{seq}}",
+    "siteId": "{{siteId}}",
+    "wsNo": "{{wsNo}}",
+    "posInfo": "{{posInfo}}",
+    "dataTransaction": {
+      "transAmount": "1000.00",
+      "tipAmount": "0.00",
+      "folioCheckIn": "abcd",
+      "tipOnPinpad": true,
+      "promoOnPinpad": false,
+      "transCurrency": "484",
+      "cardPresent": true
+    }
+  }
+}
+
+body:xml {
+  {
+    "code": "1007",
+    "sequenceNo": "{{dynamicSequenceNumber}}",
+    "siteId": "{{siteID}}",
+    "wsNo": "{{serialNumber}}",
+    "posInfo": "BrunoRequest",
+    "dataTransaction": {
+      "transAmount": "{{transactionAmount}}",
+      "tipAmount": "0.00",
+      "tipOnPinpad": false,
+      "promoOnPinpad": false,
+      "transCurrency": "484",
+      "cardPresent": true
+    }
+  }
+}
+
+vars:post-response {
+  token: res.body.token
+}
+
+script:pre-request {
+  bru.setVar("seq", Date.now().toString().slice(-8));
+}
+
+script:post-response {
+  function findKey(obj, key) {
+    if (obj && typeof obj === "object") {
+      if (key in obj) return obj[key];
+      for (const k of Object.keys(obj)) {
+        const found = findKey(obj[k], key);
+        if (found !== undefined) return found;
+      }
+    }
+  }
+  
+  bru.setVar("originalSeqNo", bru.getVar("seq"));
+  bru.setVar("originalRrn", findKey(res.body, "rrn"));
+  bru.setVar("approvalCode", findKey(res.body, "approvalCode"));
+  bru.setVar("maskedPan", findKey(res.body, "accountNumber"));
+  bru.setVar("txnDate", findKey(res.body, "txnDate"));
+  
+  //flujo para sumar txnAmount para el checkout
+  const cents = parseInt(findKey(res.body, "txnAmount"), 10);
+  bru.setVar("totalCents", cents);
+  bru.setVar("totalAmount", (cents / 100).toFixed(2));
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,106 @@
+meta {
+  name: Cancelación
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/opi
+  body: xml
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/xml
+  x-api-key: q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl
+}
+
+body:json {
+  <TransactionRequest>
+    <SequenceNo>959186495342</SequenceNo>
+    <TransType>08</TransType>
+    <TransAmount>100</TransAmount>
+    <TransCurrency>484</TransCurrency>
+    <OriginalRRN>625019083012</OriginalRRN>
+    <TransToken>5F10309DAAE741DB</TransToken>
+    <IssuerId>01</IssuerId>
+    <PAN>493173******9979</PAN>
+    <ExpiryDate>2903</ExpiryDate>
+    <TaxAmount>0</TaxAmount>
+    <ChargeInfo>0</ChargeInfo>
+    <TransDateTime>2026-07-17T11: 35: 42-06: 00</TransDateTime>
+    <SiteId>RCLOCTRU4F3W</SiteId>
+    <WSNo>148254267001</WSNo>
+    <Operator>2062</Operator>
+    <GuestNo>212</GuestNo>
+    <IndustryCode>2</IndustryCode>
+    <ProxyInfo>SPIV25.1</ProxyInfo>
+    <POSInfo>Simphony 19.9.2.0.80</POSInfo>
+    <CheckEmployeeCheckName>SmartPayments</CheckEmployeeCheckName>
+    <OrderType>Dine In</OrderType>
+    <OriginalTransType>01</OriginalTransType>
+    <SalesTtl>900000</SalesTtl>
+  </TransactionRequest>
+}
+
+body:xml {
+  <TransactionRequest>
+    <SequenceNo>959186495342</SequenceNo>
+    <TransType>08</TransType>
+    <TransAmount>100</TransAmount>
+    <TransCurrency>484</TransCurrency>
+    <OriginalRRN>625019083014</OriginalRRN>
+    <TransToken>61E2BFE08D4A40EE</TransToken>
+    <IssuerId>01</IssuerId>
+    <PAN>477213******9204</PAN>
+    <ExpiryDate>2507</ExpiryDate>
+    <TaxAmount>0</TaxAmount>
+    <ChargeInfo>0</ChargeInfo>
+    <TransDateTime>2026-07-17T11: 35: 42-06: 00</TransDateTime>
+    <SiteId>RCLOCTRU4F3W</SiteId>
+    <WSNo>148254267001</WSNo>
+    <Operator>2062</Operator>
+    <GuestNo>212</GuestNo>
+    <IndustryCode>2</IndustryCode>
+    <ProxyInfo>SPIV25.1</ProxyInfo>
+    <POSInfo>Simphony 19.9.2.0.80</POSInfo>
+    <CheckEmployeeCheckName>SmartPayments</CheckEmployeeCheckName>
+    <OrderType>Dine In</OrderType>
+    <OriginalTransType>01</OriginalTransType>
+    <SalesTtl>100</SalesTtl>
+  </TransactionRequest>
+}
+
+script:pre-request {
+  const sequenceNumber = Date.now();
+  
+  bru.setVar("dynamicSequenceNumber", sequenceNumber);
+  
+  console.log("dynamicSequenceNumber:", sequenceNumber);
+}
+
+script:post-response {
+  const jsonData = res.getBody();
+  
+  test("Cancelación aprobada", function () {
+      expect(jsonData.dataCommand.responseMessage).to.equal("APROBADA");
+  });
+  
+  if (jsonData?.dataCommand?.responseMessage !== "APROBADA") {
+      console.error("❌ Cancelación falló", {
+          response: jsonData
+      });
+  } else {
+      console.log("✅ Cancelación exitosa", {
+          approvalCode: jsonData.dataCommand.approvalCode,
+          rrn: jsonData.dataCommand.rrn
+      });
+  }
+  
+  bru.setNextRequest(null);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

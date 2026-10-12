@@ -1,0 +1,83 @@
+meta {
+  name: CheckOut
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-api-key: Ai7CQBv4LB2lmo6MyEQ8C5qubsyvMUHW5stlFBZv
+  Accept: application/json
+}
+
+body:json {
+  {
+    "code": "1008",
+    "sequenceNo": "{{seq}}",
+    "siteId": "{{siteId}}",
+    "wsNo": "{{wsNo}}",
+    "posInfo": "{{posInfo}}",
+    "dataTransaction": {
+      "originalTxCode": "1007",
+      "originalSeqNo": "{{originalSeqNo}}",
+      "txnDate": "{{txnDate}}",
+      "tipAmount": "0.00",
+      "tipOnPinpad": false,
+      "promoOnPinpad": true,
+      "transAmount": "{{totalAmount}}",
+      "transCurrency": "484",
+      "cardPresent": false,
+      "allowManualEntry": false,
+      "approvalCode": "{{approvalCode}}",
+      "originalRnn": "{{originalRrn}}",
+      "maskedPan": "{{maskedPan}}"
+    }
+  }
+}
+
+body:xml {
+  {
+    "code": "1007",
+    "sequenceNo": "{{dynamicSequenceNumber}}",
+    "siteId": "{{siteID}}",
+    "wsNo": "{{serialNumber}}",
+    "posInfo": "BrunoRequest",
+    "dataTransaction": {
+      "transAmount": "{{transactionAmount}}",
+      "tipAmount": "0.00",
+      "tipOnPinpad": false,
+      "promoOnPinpad": false,
+      "transCurrency": "484",
+      "cardPresent": true
+    }
+  }
+}
+
+vars:pre-request {
+  siteID: COMIDURHC6PK
+}
+
+script:pre-request {
+  bru.setVar("seq", Date.now().toString().slice(-8));
+}
+
+script:post-response {
+  const body = typeof res.body === "string" ? res.body : JSON.stringify(res.body);
+  const tag = (name) => (body.match(new RegExp(`<${name}>(.*?)</${name}>`)) || [])[1];
+  
+  bru.setVar("originalSeqNo", bru.getVar("seq"));
+  bru.setVar("originalRrn", tag("RRN"));
+  bru.setVar("approvalCode", tag("AuthCode"));   // confirma el nombre real
+  bru.setVar("maskedPan", tag("MaskedPan"));     // confirma el nombre real
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
