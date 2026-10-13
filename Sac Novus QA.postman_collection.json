@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "140128f3-c1a7-48f6-bbbf-a1d32527ffce",
+    "name": "Sac Novus QA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-140128f3-c1a7-48f6-bbbf-a1d32527ffce?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Registro terminal QA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/ecmascript",
+            "type": "text"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "es-MX",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer",
+            "type": "text"
+          },
+          {
+            "key": "Cookie",
+            "value": "AWSALB=D9vqSFhP1Gx9eP827FkTWaM40D/qxSPEQFtjL/WUlInGlCJNF1MN+HvKol548yzZQS2RIA1fOGae6+MGCOfqrfZURC4zOnwVcl+wEC6TTRoDEdRU1YpcA2lX9ZAA; AWSALBCORS=D9vqSFhP1Gx9eP827FkTWaM40D/qxSPEQFtjL/WUlInGlCJNF1MN+HvKol548yzZQS2RIA1fOGae6+MGCOfqrfZURC4zOnwVcl+wEC6TTRoDEdRU1YpcA2lX9ZAA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "data '{ \n  \"smart_key\": \"SMART\", \n  \"branch_key\": \"BRANCH\", \n  \"serial_number\": \"NUMERO DE SERIE\" \n}' ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/inventory/device-assignments-profiler",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "inventory",
+            "device-assignments-profiler"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pre - auth QA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "aqPOJn4r48tJuLGYcUbC3f55sg1bckQ2Tt9PWrV9",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"serial_number\": \"195251616665\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/profiler/profiler/preauth",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "profiler",
+            "preauth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - QA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "jL4bO6rOIQafIdFSRGJgc3eBe9J5CWQJ9C1G4kWG",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"serial_number\": \"148254267001\",\n    \"smart_key\": \"8ZUYQPRY\",\n    \"branch_key\": \"1HEARJMW\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/profiler/profiler/auth",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "profiler",
+            "auth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logon QA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer dixvc7GHL6CzYT0UZf5k2iJyJWgK6p5rn/d2EYN2Zzfr4bByFwDqs7S1zVDzeN1qpr8gu3K/ULvuFKDO8wrw1ka0nOuGuiZy2//I65R9LxYiDQ1RmWNImbPf3Vx4JcuJFAzxBAJWbF4oAU2gKke475T3Pf2NnqB2Z3drHIfDvqXdJzozcgvva5nARXkx4ud4wJWXbYGawJLh0c5Dmg8+NMaV4bOwQF32wjPzeSWM/SJgHYtKdckibpCV8WCo9PxMqWIgCIgJsL2wlw6dkgaxVv58Z/IWSTOOWB6SXmS7pC5MaSAwOcCV8KiVzLteSMFZYDDY09BbW0DDkyTYRShgMpvVgySWbYbY9V5ipT4YmQjeTG6iczYa5zBC9PpiBPsZ/wPfZy3D/VCPCF/ZC13FwP+M/TWQWNJx4wfF4ZjIHpMALuMV/mZaLQuQcY12i5P4BKjfNb51NL3OqfNJRYn6DVdzq0vm6QbloZjgvrvNu4Ud9THHf30qNnkCBwfGlssLjq59TtyMsK9WdKKxvMw48N9RDEN1BPfJwbG1eQeKrC7nRqzug6ohIi3oxR10uDUR3FDp3HMqu+jFvelxZO6jAYDgaZYX93RLkRrBQA+sJRsSw8hsSFEu/g==",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "Z8pIufXJ8i9Nfwg3WacZL4F05UlPzOUd9qgYynnn",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"txn_data\": {\n        \"transaction_type\": \"0001\",\n        \"datetime_pos\": \"250319001913\",\n        \"datetime_gateway\": \"250319001913\",\n        \"tsn\": \"001913\",\n        \"reference\": \"250781000002\",\n        \"id_operation\": \"T250780055541035776\",\n        \"ref_client\": \"dcrfghgtygh\",\n        \"acquirers\": [\n         {\n            \"code\": \"CV01-01\"\n         }\n        ]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/profiler/transaction/administrative",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "transaction",
+            "administrative"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Operacion QA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer u4HIVeqkNGMihY1//RfS73qGeQ/7k6lFT6rblkA4oldwlM/fC4I5+0Wl+/25mARGYNyApbOFAowVZN4mJnpRMR0K4LAieOKXdwsIvAOC1NXpYw3wp5Lvg4mdDJ0TViAbIWKUYuWBXsE+fXwE1L3OEl72W/Yp9J4y22ndkwBptOibO+HGPGtlbGeYeDGrGG2rWjep72TH9UI+XsyXTZekkycr3js8XSp83U6nf4t3tKBRMolleexqLHGt4e3sKIHeOx3RUJRXZxfV3VLFKrasyKwM2EfZfePVsVnuTHEMngpf/v/bIv4LrewCoYfYVyztGC4pmliAA4aQ2hVj2elA332oD5J+RCbD/UUkaAl+/eFt8DSkEsoF44qwYcUgtEhKNHG2wh+ayTD8ESppXUtj2Jl6flVjT79FpXVWgHyab35nqzP10ds1x+ibQXyLE+eqfLqpJmPaIfgqlunOb6FjO3PlO1SA1prW1p8UTcC4GtVIkxxBRtw4Bo4mKrWnZU+gpfRRj/M8hDfJjJAFEEukMbXc/Hu9l6z9C2vpPntyNHpC+kJ44DReeDt+YJSTQsGH7JFD9P1H8TmGVyM=",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "lra9aLv6NT1RTx6SYSYzN5Hypto4QwVdaa9QTxYJ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"txn_data\": {\n        \"tsn\": \"131619\",\n        \"reference\": \"607919168198\",\n        \"transaction_type\": \"1001\",\n        \"datetime_pos\": \"260320131320\",\n        \"datetime_gateway\": \"260320131320\",\n        \"ref_client\": \"V0PDWp\",\n        \"id_operation\": \"L200326131319017830\",\n        \"additional_data\": {\n            \"account_txn\": \"53172270****8847\",\n            \"account_txn_sha\": \"186d2df9468169c730d9f76f58680ddba941ee3899459b00b62295ae552651e8\",\n            \"serial_number\": \"148254267007\",\n            \"entry_mode\": \"07\",\n            \"terminal_capacity\": \"03\",\n            \"validate_promotions\": \"7\",\n            \"total_amount\": \"100000\",\n            \"gross_amount\": \"100000\",\n            \"tip_amount\": \"0\",\n            \"point_amount\": \"0\",\n            \"currency_code\": \"484\",\n            \"card_present\": \"1\"\n        },\n        \"data_emv\": {\n            \"9F1A\": \"0484\",\n            \"9F39\": \"07\",\n            \"9F36\": \"050B\",\n            \"9F37\": \"72242C8F\",\n            \"9F15\": \"0101\",\n            \"C2\": \"01\",\n            \"9F53\": \"52\",\n            \"9F34\": \"1E0300\",\n            \"9F35\": \"22\",\n            \"9F10\": \"0110A04003220000000000000000000000FF\",\n            \"9F33\": \"E0B0C8\",\n            \"9F0E\": \"0000000000\",\n            \"5F2A\": \"0484\",\n            \"9F0F\": \"B470848000\",\n            \"50\": \"4D617374657263617264\",\n            \"9F0D\": \"B450840000\",\n            \"95\": \"0000008001\",\n            \"9F6E\": \"04840000303000\",\n            \"9F27\": \"80\",\n            \"9A\": \"260320\",\n            \"9B\": \"0000\",\n            \"9F03\": \"000000000000\",\n            \"9C\": \"00\",\n            \"5F24\": \"321031\",\n            \"9F26\": \"3C740062FC912A9F\",\n            \"9F09\": \"0002\",\n            \"5F25\": \"241201\",\n            \"5F28\": \"0484\",\n            \"9F07\": \"FFC0\",\n            \"9F41\": \"00000034\",\n            \"9F02\": \"000000100000\",\n            \"5F20\": \"\",\n            \"9F21\": \"131621\",\n            \"82\": \"1980\",\n            \"9F1E\": \"3530383238333439\",\n            \"84\": \"A0000000041010\"\n        },\n        \"component_device_info\": [\n            {\n                \"type\": \"PN4009 3.0.0.4f\",\n                \"name_version\": \"App\"\n            },\n            {\n                \"type\": \"\",\n                \"name_version\": \"Browser\"\n            },\n            {\n                \"type\": \"\",\n                \"name_version\": \"DLL\"\n            }\n        ]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/profiler/transaction/financial",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "transaction",
+            "financial"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "info": {
+    "_postman_id": "a05f6a6d-6aa3-46b9-825f-fd5ab442f6af",
+    "name": "Pruebas Smart",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-a05f6a6d-6aa3-46b9-825f-fd5ab442f6af?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Request Parametros",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "{",
+              "    \"folio\": \"ancona_cm\"",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://qadevicemanager.servipago.com.mx/api/v1/smart/e-commerce/device-configuration/parameters/download-by-folio",
+          "protocol": "https",
+          "host": [
+            "qadevicemanager",
+            "servipago",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "smart",
+            "e-commerce",
+            "device-configuration",
+            "parameters",
+            "download-by-folio"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

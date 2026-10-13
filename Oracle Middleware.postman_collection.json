@@ -1,0 +1,45 @@
+{
+  "info": {
+    "_postman_id": "581d0f49-0fe5-40b0-993c-0dbb286559d5",
+    "name": "Oracle Middleware",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-581d0f49-0fe5-40b0-993c-0dbb286559d5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Petición",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TransactionRequest>\n    <SequenceNo>465586163933</SequenceNo>\n    <TransType>01</TransType>\n    <TransAmount>23000</TransAmount>\n    <OtherAmount>0</OtherAmount>\n    <TipAmount>0</TipAmount>\n    <TransCurrency>484</TransCurrency>\n    <TaxAmount>0</TaxAmount>\n    <TransDateTime>2026-05-11T15:32:05-06:00</TransDateTime>\n    <CardPresent>1</CardPresent>\n    <PartialAuthFlag>0</PartialAuthFlag>\n    <SiteId>972000000001</SiteId>\n    <WSNo>35586</WSNo>\n    <Operator>12872</Operator>\n    <GuestNo>50003338</GuestNo>\n    <ChargeInfo>0</ChargeInfo>\n    <IndustryCode>2</IndustryCode>\n    <ProxyInfo>SPIV23.2</ProxyInfo>\n    <POSInfo>Simphony 19.6.2.0</POSInfo>\n    <CheckEmployeeCheckName>TB02</CheckEmployeeCheckName>\n    <OrderType>Auto</OrderType>\n    <SupportsCardAcquisition>0</SupportsCardAcquisition>\n    <SupportDonation>N</SupportDonation>\n    <SupportCCSurcharge>N</SupportCCSurcharge>\n    <SuggestedTipPercent1>18</SuggestedTipPercent1>\n    <SuggestedTipPercent2>20</SuggestedTipPercent2>\n    <SuggestedTipPercent3>25</SuggestedTipPercent3>\n    <SuggestedTipCustom>1</SuggestedTipCustom>\n    <SuggestedTipNoTip>1</SuggestedTipNoTip>\n</TransactionRequest>",
+          "options": {
+            "raw": {
+              "language": "html"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://127.0.0.1:8991",
+          "protocol": "https",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8991"
+        }
+      },
+      "response": []
+    }
+  ]
+}

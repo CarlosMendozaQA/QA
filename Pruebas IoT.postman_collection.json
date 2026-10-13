@@ -1,0 +1,522 @@
+{
+  "info": {
+    "_postman_id": "16bef2b9-a2fb-47c5-b5cc-7e2da5bcc5ef",
+    "name": "Pruebas IoT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-16bef2b9-a2fb-47c5-b5cc-7e2da5bcc5ef?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Venta",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "if (jsonData?.dataCommand?.responseMessage === \"APROBADA\") {",
+              "",
+              "    // Guardar variables (ya lo tienes)",
+              "    pm.collectionVariables.set(\"originalSequenceNumber\", pm.collectionVariables.get(\"dynamicSequenceNumber\"));",
+              "    pm.collectionVariables.set(\"transactionDate\", jsonData.dataCommand.txnDate);",
+              "    pm.collectionVariables.set(\"approvalCode\", jsonData.dataCommand.approvalCode);",
+              "    pm.collectionVariables.set(\"transactionAmount\", (Number(jsonData.dataCommand.txnAmount) / 100).toFixed(2));",
+              "    pm.collectionVariables.set(\"maskedPan\", jsonData.dataCommand.accountNumber);",
+              "    pm.collectionVariables.set(\"originalRNN\", jsonData.dataCommand.rrn);",
+              "",
+              "    // DECISIÓN DEL FLUJO 🎯",
+              "    let flujo = pm.environment.get(\"flujo\"); ",
+              "    // valores posibles: reverso, cancelacion, devolucion, consulta",
+              "",
+              "    if (flujo === \"reverso\") {",
+              "        postman.setNextRequest(\"Reverso\");",
+              "    } else if (flujo === \"cancelacion\") {",
+              "        postman.setNextRequest(\"Cancelación\");",
+              "    } else if (flujo === \"devolucion\") {",
+              "        postman.setNextRequest(\"Devolución\");",
+              "    } else {",
+              "        postman.setNextRequest(\"Consulta\");",
+              "    }",
+              "",
+              "} else {",
+              "    postman.setNextRequest(null);",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"1001\",\n  \"sequenceNo\": \"20260526170001\",\n  \"siteId\": \"RCLO8CM97HHS\",\n  \"wsNo\": \"227UHU812462\",\n  \"posInfo\": \"SMARTPOS|V1.04\",\n  \"dataTransaction\": {\n    \"transAmount\": \"{{transactionAmount}}\",\n    \"tipAmount\": \"0.00\",\n    \"tipOnPinpad\": \"false\",\n    \"promoOnPinpad\": \"true\",\n    \"product\": \"02\",\n    \"transCurrency\": \"484\",\n    \"cardPresent\": \"true\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "iot-gateway",
+            "transaction"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"dynamicSequenceNumber\", Date.now());"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "pm.test(\"Consulta exitosa\", function () {",
+              "    pm.expect(jsonData).to.have.property(\"dataCommand\");",
+              "});",
+              "",
+              "if (!jsonData?.dataCommand) {",
+              "    console.error(\"❌ Consulta sin dataCommand\", jsonData);",
+              "} else {",
+              "    console.log(\"🔍 Consulta OK\", {",
+              "        rrn: jsonData.dataCommand.rrn,",
+              "        status: jsonData.dataCommand.responseMessage",
+              "    });",
+              "}",
+              "",
+              "postman.setNextRequest(null);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"0002\",\n  \"sequenceNo\": \"{{dynamicSequenceNumber}}\",\n  \"siteId\": \"{{siteId}}\",\n  \"wsNo\": \"{{serialNumber}}\",\n  \"posInfo\": \"SMARTPOS|V1.04\",\n  \"dataTransaction\": {\n    \"originalTxCode\": \"1001\",\n    \"originalSeqNo\": \"{{originalSequenceNumber}}\",\n    \"txnDate\": \"{{transactionDate}}\",\n    \"transAmount\": \"{{transactionAmount}}\",\n    \"tipOnPinpad\": false,\n    \"promoOnPinpad\": true,\n    \"transCurrency\": \"484\",\n    \"cardPresent\": false\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "iot-gateway",
+            "transaction"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reverso",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(",
+              "  \"dynamicSequenceNumber\",",
+              "  new Date().toISOString().replace(/[-:TZ.]/g, \"\").slice(0, 14)",
+              ");"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "pm.test(\"Reverso aprobado\", function () {",
+              "    pm.expect(jsonData.dataCommand.responseMessage).to.eql(\"APROBADA\");",
+              "});",
+              "",
+              "if (jsonData?.dataCommand?.responseMessage !== \"APROBADA\") {",
+              "    console.error(\"❌ Reverso falló\", {",
+              "        response: jsonData",
+              "    });",
+              "} else {",
+              "    console.log(\"🔄 Reverso exitoso\", {",
+              "        approvalCode: jsonData.dataCommand.approvalCode,",
+              "        rrn: jsonData.dataCommand.rrn",
+              "    });",
+              "}",
+              "",
+              "postman.setNextRequest(null);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"code\": \"1002\",\n    \"sequenceNo\": \"{{dynamicSequenceNumber}}\",\n    \"siteId\": \"RCLO8CM97HHS\",\n    \"wsNo\": \"227UHU812462\",\n    \"posInfo\": \"PostmanRequest\",\n    \"dataTransaction\": {\n        \"originalTxCode\": \"1001\",\n        \"originalSeqNo\": \"{{originalSequenceNumber}}\",\n        \"txnDate\": \"{{transactionDate}}\",\n        \"approvalCode\": \"{{approvalCode}}\",\n        \"transAmount\": \"{{transactionAmount}}\",\n        \"transCurrency\": \"484\",\n        \"cardPresent\": false,\n        \"maskedPan\": \"{{maskedPan}}\",\n        \"originalRnn\": \"{{originalRNN}}\",\n        \"tipOnPinpad\": false,\n        \"promoOnPinpad\": true\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "iot-gateway",
+            "transaction"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancelación",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"dynamicSequenceNumber\", Date.now());"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "pm.test(\"Cancelación aprobada\", function () {",
+              "    pm.expect(jsonData.dataCommand.responseMessage).to.eql(\"APROBADA\");",
+              "});",
+              "",
+              "if (jsonData?.dataCommand?.responseMessage !== \"APROBADA\") {",
+              "    console.error(\"❌ Cancelación falló\", {",
+              "        response: jsonData",
+              "    });",
+              "} else {",
+              "    console.log(\"❌ Cancelación exitosa\", {",
+              "        approvalCode: jsonData.dataCommand.approvalCode,",
+              "        rrn: jsonData.dataCommand.rrn",
+              "    });",
+              "}",
+              "",
+              "postman.setNextRequest(null);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"1004\",\n  \"sequenceNo\": \"{{dynamicSequenceNumber}}\",\n  \"siteId\": \"{{siteId}}\",\n  \"wsNo\": \"{{serialNumber}}\",\n  \"posInfo\": \"PostmanRequest\",\n  \"dataTransaction\": {\n    \"originalSeqNo\": \"{{originalSequenceNumber}}\",\n    \"txnDate\": \"{{transactionDate}}\",\n    \"approvalCode\": \"{{approvalCode}}\",\n    \"transAmount\": \"{{transactionAmount}}\",\n    \"tipAmount\": \"0.00\",\n    \"tipOnPinpad\": false,\n    \"promoOnPinpad\": true,\n    \"transCurrency\": \"484\",\n    \"cardPresent\": false,\n    \"maskedPan\": \"{{maskedPan}}\",\n    \"originalRnn\": \"{{originalRNN}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "iot-gateway",
+            "transaction"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Devolución",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"dynamicSequenceNumber\", Date.now());"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "pm.test(\"Devolución aprobada\", function () {",
+              "    pm.expect(jsonData.dataCommand.responseMessage).to.eql(\"APROBADA\");",
+              "});",
+              "",
+              "if (jsonData?.dataCommand?.responseMessage !== \"APROBADA\") {",
+              "    console.error(\"❌ Devolución falló\", {",
+              "        response: jsonData",
+              "    });",
+              "} else {",
+              "    console.log(\"💸 Devolución exitosa\", {",
+              "        approvalCode: jsonData.dataCommand.approvalCode,",
+              "        rrn: jsonData.dataCommand.rrn",
+              "    });",
+              "}",
+              "",
+              "postman.setNextRequest(null);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "q6VQqBNi9R26a3ucq1NQz8n0dpixiEL48tedV5Xl",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"1005\",\n  \"sequenceNo\": \"{{dynamicSequenceNumber}}\",\n  \"siteId\": \"{{siteId}}\",\n  \"wsNo\": \"{{serialNumber}}\",\n  \"posInfo\": \"PostmanRequest\",\n  \"dataTransaction\": {\n    \"originalSeqNo\": \"{{originalSequenceNumber}}\",\n    \"txnDate\": \"{{transactionDate}}\",\n    \"approvalCode\": \"{{approvalCode}}\",\n    \"transAmount\": \"{{transactionAmount}}\",\n    \"tipAmount\": \"0.00\",\n    \"tipOnPinpad\": false,\n    \"promoOnPinpad\": true,\n    \"transCurrency\": \"484\",\n    \"cardPresent\": false,\n    \"maskedPan\": \"{{maskedPan}}\",\n    \"originalRnn\": \"{{originalRNN}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qa.stg.smartpayment.com.mx/iot-gateway/transaction",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qa",
+            "stg",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "iot-gateway",
+            "transaction"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "pm.collectionVariables.set(",
+          "  \"dynamicSequenceNumber\",",
+          "  new Date().toISOString().replace(/[-:TZ.]/g, \"\").slice(0, 14)",
+          ");"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "dynamicSequenceNumber",
+      "value": ""
+    },
+    {
+      "key": "siteId",
+      "value": ""
+    },
+    {
+      "key": "serialNumber",
+      "value": ""
+    },
+    {
+      "key": "transactionAmount",
+      "value": ""
+    },
+    {
+      "key": "costumerApiKey",
+      "value": ""
+    },
+    {
+      "key": "originalSequenceNumber",
+      "value": ""
+    },
+    {
+      "key": "transactionDate",
+      "value": ""
+    },
+    {
+      "key": "approvalCode",
+      "value": ""
+    },
+    {
+      "key": "maskedPan",
+      "value": ""
+    },
+    {
+      "key": "originalRNN",
+      "value": ""
+    }
+  ]
+}

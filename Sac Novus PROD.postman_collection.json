@@ -1,0 +1,182 @@
+{
+  "info": {
+    "_postman_id": "22af4e16-a61d-43c9-ab1f-be5da8d9c2a6",
+    "name": "Sac Novus PROD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-22af4e16-a61d-43c9-ab1f-be5da8d9c2a6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Pre - auth PROD",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "jCis7SJJGX52xVv8IXmwZ3EXVYGvNaVE5ZQs9J4e",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"serial_number\": \"195250828349\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cloudinterface.smartpayment.com.mx/profiler/profiler/preauth",
+          "protocol": "https",
+          "host": [
+            "cloudinterface",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "profiler",
+            "preauth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth PROD",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "2uEcxcD9vQ6CzJnyi9uBo4Ryr7XZtui2awcvvT5R",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"serial_number\": \"195250828349\",\n  \"smart_key\": \"Q2EIN4QM\",\n  \"branch_key\": \"6LZE5V2N\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cloudinterface.smartpayment.com.mx/profiler/profiler/auth",
+          "protocol": "https",
+          "host": [
+            "cloudinterface",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "profiler",
+            "auth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logon PROD",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "2uEcxcD9vQ6CzJnyi9uBo4Ryr7XZtui2awcvvT5R",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer yuaG7B7oK3xz6EtwLYV38ApamT3dKfV17XD3DDWC1gNKmzST87uSMwQ7Z9i3OnLiyDQ7E0MW5nAmFx/kKbO+Zbls3pndaFPLZr7tLgRxcmulkuF8K7Lk+xZqQgTX/9z0Hi6Gb/QC0BRSqeRv18OLm+5ylTfszlseoUujDfjSAvQkNiJcOFIqQcltzQsz7VXRH+0IbKK6OXRqtbDpbXmDvH5WLesxm1K1F0koYfN39eMUvoZ1tZAdk8SlHm+Owp5nPH35QPwOlgDwmD/UKhKInQgzuHTx0/1QiIFuaaifzm9FdJg5xwR+mCOMIT9vnhzcADjCke2L/QZNWX2s5xvdYEodMPXjIpuYCBDt2pmDqkOmuOi9ntgcLs4L2m2ejfX6JETmycQHFzQvLdUeedioUi2qp5N/uuB4omHGMvfmFt+lYpblV4jdO2rll6yQNbMzWvMi50anxJPwDP2TPoQyaAP2pTBRmeo+nF1GOVx1PV60t7a/HDzLw0n/RcBdH60Egt6sHzjMLMyAc+cmTZFh29OB4Q5OlRzJ9HNDYqWzAqUmzbhw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"txn_data\": {\n        \"transaction_type\": \"0001\",\n        \"datetime_pos\": \"250323124512\",\n        \"datetime_gateway\": \"250323124512\",\n        \"tsn\": \"124512\",\n        \"reference\": \"250781000003\",\n        \"id_operation\": \"T250780055541035777\",\n        \"ref_client\": \"dcrfghgtyth\",\n        \"acquirers\": [\n         {\n            \"code\": \"CV01-01\"\n         }\n        ]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cloudinterface.smartpayment.com.mx/profiler/transaction/administrative",
+          "protocol": "https",
+          "host": [
+            "cloudinterface",
+            "smartpayment",
+            "com",
+            "mx"
+          ],
+          "path": [
+            "profiler",
+            "transaction",
+            "administrative"
+          ]
+        },
+        "description": "## Endpoint Description\n\nThis endpoint is used to initiate an administrative transaction within the payment processing system. It allows users to submit transaction data for processing and receive a response that includes the status of the transaction.\n\n### Request Parameters\n\nThe request body must be in JSON format and contain the following parameters:\n\n- **txn_data** (object): Contains the transaction details.\n    \n    - **transaction_type** (string): Specifies the type of transaction (e.g., \"0001\").\n        \n    - **datetime_pos** (string): The date and time of the point of sale in the format DDMMYYHHMMSS.\n        \n    - **datetime_gateway** (string): The date and time of the gateway in the format DDMMYYHHMMSS.\n        \n    - **tsn** (string): The terminal serial number.\n        \n    - **reference** (string): A unique reference number for the transaction.\n        \n    - **id_operation** (string): The identifier for the operation being performed.\n        \n    - **ref_client** (string): A reference identifier for the client.\n        \n    - **acquirers** (array): A list of acquirers involved in the transaction.\n        \n        - **code** (string): The code of the acquirer (e.g., \"CV01-01\").\n            \n\n### Expected Response\n\nUpon a successful request, the API will return a response with the following structure:\n\n- **txn_data** (object): Contains the transaction response details.\n    \n    - **transaction_type** (string): The type of transaction (returned as empty if not processed).\n        \n    - **resp_code** (string): The response code indicating the result of the transaction processing.\n        \n    - **resp_message** (string): A message providing additional information about the response.\n        \n    - **id_operation** (string): The identifier of the operation as processed.\n        \n    - **hierarchy_data** (object): Contains details about the merchant and transaction hierarchy.\n        \n        - **merchant_net** (object): Information about the merchant network.\n            \n            - **id** (string): The identifier of the merchant network.\n                \n            - **name** (string): The name of the merchant network.\n                \n            - **short_name** (string): A short name for the merchant network.\n                \n            - **status** (string): The status of the merchant network.\n                \n        - **merchant** (object): Information about the merchant.\n            \n            - **id** (string): The identifier of the merchant.\n                \n            - **name** (string): The name of the merchant.\n                \n            - **short_name** (string): A short name for the merchant.\n                \n        - **branch** (object): Information about the branch.\n            \n            - **id** (string): The identifier of the branch.\n                \n            - **name** (string): The name of the branch.\n                \n            - **short_name** (string): A short name for the branch.\n                \n            - **number** (string): The branch number.\n                \n        - **pos** (object): Information about the point of sale.\n            \n            - **id** (string): The identifier of the POS.\n                \n            - **name** (string): The name of the POS.\n                \n            - **pos_identifier** (string): The identifier for the POS.\n                \n            - **unattended** (string): Indicates if the POS is unattended.\n                \n            - **type** (string): The type of POS.\n                \n            - **pos_type_desc** (string): A description of the POS type.\n                \n\n### Notes\n\n- Ensure that all required fields are populated correctly to avoid errors in processing.\n    \n- The response may contain empty fields if the transaction is not processed successfully."
+      },
+      "response": []
+    }
+  ]
+}

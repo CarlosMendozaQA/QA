@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "cbf963b3-6998-4858-9272-ed6a7a1b3892",
+    "name": "Multiplexor robot volumen",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36432172",
+    "_collection_link": "https://go.postman.co/collection/36432172-cbf963b3-6998-4858-9272-ed6a7a1b3892?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Start services",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:7081/authorization/startServices",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "7081",
+          "path": [
+            "authorization",
+            "startServices"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Stop services",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:7081/authorization/stopServices",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "7081",
+          "path": [
+            "authorization",
+            "stopServices"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mensaje prosa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:7081/authorization/doTransaction?cycles=1000&time=100",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "7081",
+          "path": [
+            "authorization",
+            "doTransaction"
+          ],
+          "query": [
+            {
+              "key": "cycles",
+              "value": "1000"
+            },
+            {
+              "key": "time",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
